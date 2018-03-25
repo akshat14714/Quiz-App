@@ -1,0 +1,14 @@
+<h1><%= params[:genre] %>(<%= params[:subgenre] %>)</h1>
+<h1><%= $c[0].ques %></h1>
+<%= form_for(@test, url: play_path(:subgenre => params[:subgenre] ,:genre => params[:genre], :restore => 0)) do |f| %>
+<%= f.check_box :optA %>
+<h3><%= $c[0].optA %></h3><br/>
+<%= f.check_box :optB %>
+<h3><%= $c[0].optB %></h3><br/>
+<%= f.check_box :optC %>
+<h3><%= $c[0].optC %></h3><br/>
+<%= f.check_box :optD %>
+<h3><%= $c[0].optD %></h3><br/>
+<%= f.submit "Submit", class: "btn btn-primary" %>
+
+<%end%>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questions</h1>
+
+<table border=1>
+  <thead style="text-align:center;">
+    <tr>
+      <th>Number</th>
+      <th>Ques</th>
+      <th>Opta</th>
+      <th>Optb</th>
+      <th>Optc</th>
+      <th>Optd</th>
+      <th>Sub genre</th>
+      <th>Genre</th>
+      <th colspan="3">Operations</th>
+    </tr>
+  </thead>
+
+  <tbody style="text-align: center;">
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.number %></td>
+        <td><%= question.ques %></td>
+        <td><%= question.optA %></td>
+        <td><%= question.optB %></td>
+        <td><%= question.optC %></td>
+        <td><%= question.optD %></td>
+        <td><%= question.sub_genre.subgenrename %></td>
+        <td><%= question.sub_genre.genre.genrename %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path %>

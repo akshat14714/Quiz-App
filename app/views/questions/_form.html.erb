@@ -1,0 +1,57 @@
+<%= form_with(model: question, local: true) do |form| %>
+  <% if question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number, id: :question_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ques %>
+    <%= form.text_field :ques, id: :question_ques %>
+  </div>
+
+  <div class="field">
+    <%= form.label :optA %>
+    <%= form.text_field :optA, id: :question_optA %>
+  </div>
+
+  <div class="field">
+    <%= form.label :optB %>
+    <%= form.text_field :optB, id: :question_optB %>
+  </div>
+
+  <div class="field">
+    <%= form.label :optC %>
+    <%= form.text_field :optC, id: :question_optC %>
+  </div>
+
+  <div class="field">
+    <%= form.label :optD %>
+    <%= form.text_field :optD, id: :question_optD %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer %>
+    <%= form.text_field :answer, id: :question_answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_genre_id %>
+    <%= form.text_field :sub_genre_id, id: :question_sub_genre_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
